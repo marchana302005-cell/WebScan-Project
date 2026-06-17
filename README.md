@@ -4,7 +4,7 @@ Web Application Vulnerability Scanner
 
 
 ### **Objective**
-Build a scanner to detect common web application vulnerabilities like **XSS and SQL Injection** using Python. 
+Build a scanner to detect common web application vulnerabilities like **XSS,SQL Injection** using Python. 
 
 
 
