@@ -45,7 +45,7 @@ Component | Status | What it does
 3. **Regex Detection**: Identifies attack success patterns in responses
 4. **Severity Levels**: Classifies SQLi as `CRITICAL`, XSS as `HIGH`, CSRF as 'Medium'
 5. **Web UI**: No command line needed - scan from browser
-6. **Report Export**: Download `report.html`. I give as jpeg format( vulnerabilities tested - XSS+SQLI+CSFR)
+6. **Report Export**: Download `report.html`. I give as jpeg format( vulnerabilities tested - XSS+SQLI+CSFR) and Report.html.
 
 
 
