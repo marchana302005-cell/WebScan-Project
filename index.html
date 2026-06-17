@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vuln Scanner</title>
+    <style>
+        body { font-family: Arial; background: #1e1e1e; color: #fff; padding: 30px; }
+        .container { max-width: 700px; margin: auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; background: #ff4444; color: white; border: none; cursor: pointer; }
+        .result { background: #2e2e2e; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .danger { color: #ff4444; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Vuln Scanner - XSS + SQLi</h1>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL: file://C:/path/test.html" required>
+            <button type="submit">Scan</button>
+<a href="/download"><button type="button" style="background:#00aa44; margin-top:10px">Download Report</button></a>
+        </form>
+        
+        {% if results %}
+        <h2>Scan Results:</h2>
+        {% for r in results %}
+        <div class="result">
+            <p><b>Form:</b> {{ r.action }}</p>
+            <p><b>Inputs:</b> {{ r.inputs }}</p>
+            {% if r.vulns %}
+            <p class="danger">[DANGER] {{ r.vulns|length }} vulnerabilities found:</p>
+            {% for v in r.vulns %}
+            <p>- {{ v.type }}: {{ v.payload }}</p>
+            {% endfor %}
+            {% else %}
+            <p>[SAFE] No vulnerabilities detected</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
