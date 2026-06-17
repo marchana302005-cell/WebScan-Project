@@ -4,7 +4,7 @@ Web Application Vulnerability Scanner
 
 
 ### **Objective**
-Build a scanner to detect common web application vulnerabilities like **XSS,SQL Injection** using Python. 
+Build a scanner to detect common web application vulnerabilities like **XSS,SQL Injection and CSRF** using Python. 
 
 
 
@@ -78,6 +78,7 @@ Form: search.php
 Inputs: ['q']
 [CRITICAL] SQLi: ' OR '1'='1
 [HIGH] XSS: <script>alert('XSS')</script>
+[MEDIUM] CSRF: No CSRF token found
 
 
 
