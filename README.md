@@ -43,9 +43,9 @@ Component | Status | What it does
 1. **Auto Crawling**: Finds all links and input forms on target URL
 2. **Payload Injection**: Tests XSS + SQLi payloads on every form
 3. **Regex Detection**: Identifies attack success patterns in responses
-4. **Severity Levels**: Classifies SQLi as `CRITICAL`, XSS as `HIGH`
+4. **Severity Levels**: Classifies SQLi as `CRITICAL`, XSS as `HIGH`, CSRF as 'Medium'
 5. **Web UI**: No command line needed - scan from browser
-6. **Report Export**: Download `report.html` with timestamp + full details
+6. **Report Export**: Download `report.html`. I give as jpeg format( vulnerabilities tested - XSS+SQLI+CSFR)
 
 
 
@@ -61,15 +61,14 @@ Component | Status | What it does
 
 **c. Detect** | Use regex or pattern matching for vulnerability detection
 | `scanner.py` uses regex to check response for `<script>`, `alert()`, `SQL syntax` 
-| `[DANGER] XSS detected` + `[DANGER] SQLi detected` ✅ 
+| `[DANGER] XSS detected` + `[DANGER] SQLi detected + CSRF`  ✅ 
 
  **d. Flask UI** | Create a Flask UI to manage scans and view results
 | `app.py + index.html` provides web form to enter URL + Scan button 
 | Browser UI working at `127.0.0.1:5000` ✅ 
  
 **e. Log** | Log each vulnerability with evidence and severity 
-| `report.html` export with timestamp, target URL, severity `CRITICAL/HIGH` + payload 
-| Download button generates full report ✅ 
+| `report.html` export with timestamp, target URL, severity `CRITICAL/HIGH/Medium` + payload  
 
 
 
